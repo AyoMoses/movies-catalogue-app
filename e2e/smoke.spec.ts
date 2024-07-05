@@ -18,7 +18,7 @@ test.describe("Movie Shelf Smoke Test", () => {
     await expect(movies).toHaveCount(firstPage.length);
   });
 
-  test("should load more movies once page is scroll to last movie", async ({
+  test("should load more movies once page is scrolled to last movie", async ({
     page,
   }) => {
     const firstPage = mocksByCategories["popular"][1];
@@ -36,48 +36,54 @@ test.describe("Movie Shelf Smoke Test", () => {
   test("should load movie categories when category filter is clicked", async ({
     page,
   }) => {
-    // Popular Category
-    const firstPage = mocksByCategories["popular"][1];
+    const radioButtons = page.getByRole("checkbox");
+    await expect(radioButtons).toHaveCount(3);
 
-    await page.getByRole("button", { name: "Categories" }).click();
+    const popularMovieMocks = mocksByCategories["popular"][1];
 
-    const sortItems = page.getByRole("checkbox");
-    await expect(sortItems).toHaveCount(3);
+    //Popular movies selected by default
 
     await expect(page.getByRole("listitem")).toContainText(
-      firstPage.map((item) => item.title)
+      popularMovieMocks.map((item) => item.title)
     );
 
     const allNames = page.getByTestId("movieName");
 
     // Top Rated Category
 
-    const topRatedPage = mocksByCategories["top_rated"][1];
+    const topRatedMovieMocks = mocksByCategories["top_rated"][1];
 
-    const topRatedCheckbox = page.getByRole("checkbox", {
+    const topRatedRadioButton = page.getByRole("checkbox", {
       name: "Top Rated",
     });
-    await topRatedCheckbox.click();
-    await expect(topRatedCheckbox).not.toBeVisible();
+    await topRatedRadioButton.click();
 
     await expect(allNames).toContainText(
-      topRatedPage.map((item) => item.title)
+      topRatedMovieMocks.map((item) => item.title)
     );
 
     // Upcoming Category
 
-    const upcomingPage = mocksByCategories["upcoming"][1];
+    const upcomingMovieMocks = mocksByCategories["upcoming"][1];
 
-    await page.getByRole("button", { name: "Categories" }).click();
-
-    const upcomingCheckbox = page.getByRole("checkbox", {
+    const upcomingRadioButton = page.getByRole("checkbox", {
       name: "Upcoming",
     });
-    await upcomingCheckbox.click();
-    await expect(upcomingCheckbox).not.toBeVisible();
+    await upcomingRadioButton.click();
 
     await expect(allNames).toContainText(
-      upcomingPage.map((item) => item.title)
+      upcomingMovieMocks.map((item) => item.title)
+    );
+
+    // Popular Category
+
+    const popularRadioButton = page.getByRole("checkbox", {
+      name: "Popular",
+    });
+    await popularRadioButton.click();
+
+    await expect(allNames).toContainText(
+      popularMovieMocks.map((item) => item.title)
     );
   });
 
