@@ -1,8 +1,6 @@
 import * as RadixCheckbox from '@radix-ui/react-checkbox'
 import clsx from 'clsx'
 
-import checkIcon from './check.svg'
-
 type Props = {
   onCheck: () => void
   checked: boolean
@@ -10,7 +8,7 @@ type Props = {
   label: string
 }
 
-const Checkbox = (props: Props) => {
+const RadioButton = (props: Props) => {
   return (
     <div
       className={clsx(
@@ -33,7 +31,7 @@ const Checkbox = (props: Props) => {
         onCheckedChange={props.onCheck}
       >
         <RadixCheckbox.Indicator>
-          {props.checked && <img src={checkIcon} role="presentation" alt="" />}
+          {props.checked && <div className="w-4 h-4 rounded-full bg-primary-medium" />}
           <span className="sr-only">{props.label}</span>
         </RadixCheckbox.Indicator>
       </RadixCheckbox.Root>
@@ -47,4 +45,4 @@ const Checkbox = (props: Props) => {
   )
 }
 
-export { Checkbox }
+export { RadioButton }
