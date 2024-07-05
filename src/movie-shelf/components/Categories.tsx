@@ -12,11 +12,11 @@ type Props = {
 };
 
 export const Categories = (props: Props) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(true);
 
   const handleCheck = (category: Category) => {
     props.onApplyCategory(category);
-    setIsOpen(false);
+    // setIsOpen(false);
   };
 
   return (
