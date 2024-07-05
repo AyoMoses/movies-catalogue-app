@@ -15,10 +15,6 @@ You define all the commands a real world user would execute when using the app a
 
 For prototyping the API use msw, which is a great tool for quickly creating frontends without worrying about servers. It is not an actual backend, but a mocked server inside a service worker that intercepts all HTTP requests and returns desired responses based on the handlers you define.
 
-[API Handlers Example Code](../e2e/mocks/handlers/albums.ts)
-
-[Data Models Example Code](../e2e/mocks/data/albums.ts)
-
 ## Recommended Tooling for Unit and Integration Tests:
 
 ### [Vitest](https://vitest.dev)

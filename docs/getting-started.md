@@ -2,6 +2,9 @@
 
 ## Available Scripts
 
+To install node_module dependencies:
+### `yarn` or `npm install`
+
 In the project directory, you can run:
 
 ### `npm run dev` or `yarn dev`
@@ -15,7 +18,7 @@ Will run `tsc` and `eslint`.
 
 ### `npm run test:e2e` or `yarn test:e2e`
 
-Will run PlayWright E2E test.
+Will run PlayWright E2E test. Might ask to install playwright. Keep an eye out on error logs
 
 ## API
 
