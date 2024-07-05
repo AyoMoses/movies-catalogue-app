@@ -4,7 +4,7 @@
 
 In the project directory, you can run:
 
-### `npm run dev`
+### `npm run dev` or `yarn dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
@@ -13,7 +13,7 @@ Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
 Will run `tsc` and `eslint`.
 
-### `npm run test:e2e`
+### `npm run test:e2e` or `yarn test:e2e`
 
 Will run PlayWright E2E test.
 

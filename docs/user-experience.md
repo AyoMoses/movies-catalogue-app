@@ -1,14 +1,8 @@
 # 💻 User Experience
 
-## Design Problem
+### Accessiblity
 
-There is a UX issue with the with the design and instructions needed to build the Sort Dropdown. [Instructions & Design](https://interloom.notion.site/Artefacts-for-FE-test-276090f8a8b3436bbbeaf8b45447734e)
-
-### Problem
-
-From Designs, user sorts albums by clicking on a Checkbox. After clicking on a sort item, the dropdown closes.
-
-Checkboxes are usually used for multiple selections. If a user should be able to select multiple items, then the dropdown should not close.
+- Radix makes it possible to implement keyboard navigation for certain users who'd prefer to navigate the app as so
 
 ### Solution
 
@@ -16,10 +10,6 @@ Checkboxes are usually used for multiple selections. If a user should be able to
 - Use Checkboxes, allow user to close sort menu after making multiple selections.
 
 For the sake of this challenge, I choose to keep design and functionality as described in instructions, but implement only single sort ability.
-
-The API however allows for multiple sort ability by concatinatng sort values using a comma operator (,) as shown below;
-
-`const endpoint = /baseUrlEndpoint?_page&_sort=name,releaseDate,totalTracks`
 
 ## Loading State
 
