@@ -18,7 +18,7 @@ Will run `tsc` and `eslint`.
 
 ### `npm run test:e2e` or `yarn test:e2e`
 
-Will run PlayWright E2E test. Might ask to install playwright. Keep an eye out on error logs
+Will run PlayWright E2E test. Might ask to install playwright. Keep an eye out on error logs `npm i playwright`
 
 ## API
 
